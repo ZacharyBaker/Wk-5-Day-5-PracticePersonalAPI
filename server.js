@@ -22,7 +22,9 @@ app.put('/location', mainCtrl.updateLocation);
 app.post('/hobbies', mainCtrl.addHobby);
 app.post('/occupations', mainCtrl.addOccupation);
 
-
+app.get('/skills', mainCtrl.getSkills);
+app.post('/skills', middleware.generateId, mainCtrl.postSkills);
+app.get('/secrets/:username/:pin', middleware.verifyUser, mainCtrl.getSecrets);
 
 
 
@@ -32,3 +34,9 @@ app.post('/occupations', mainCtrl.addOccupation);
 app.listen(5051, function(){
 	console.log('listening to port 5051');
 })
+
+//questions for pete
+//cors, only have to use it once?
+//middleware creating id based on array length, directions
+//confuse me. how did you come up with length + 1?
+//in the middleware.verifyUser, what is Number? where does it come from?

@@ -1,3 +1,6 @@
+var myBio = require('../models/myBio');
+
+
 module.exports = {
 	
 	
@@ -13,5 +16,21 @@ module.exports = {
 		});
 
 		next();
-	}
+	},
+
+  generateId: function(req, res, next){
+    var skills = myBio.skills;
+    var id = skills.length+1;
+    req.id = id;
+    next();
+  },
+
+  verifyUser: function(req, res, next){
+    if(req.params.username===myBio.username && Number(req.params.pin)===myBio.pin){
+      next();
+    }
+    else{
+      res.status(400).json({message: "error, incorrect info breh"});
+    }
+  }
 }
