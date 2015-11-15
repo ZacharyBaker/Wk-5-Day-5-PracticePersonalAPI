@@ -40,3 +40,5 @@ app.listen(5051, function(){
 //middleware creating id based on array length, directions
 //confuse me. how did you come up with length + 1?
 //in the middleware.verifyUser, what is Number? where does it come from?
+// ng-cloak?
+// no ui-router??
