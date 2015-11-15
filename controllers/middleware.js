@@ -1,4 +1,6 @@
 module.exports = {
+	
+	
 	addHeaders: function (req, res, next) {
 		res.status(200).set({
 			'Content-Type': 'application/json',
